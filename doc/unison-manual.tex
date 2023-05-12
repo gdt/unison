@@ -52,7 +52,7 @@
   \LARGE%
   Version \unisonversion \\[4ex] %
   % \today %
-  \large Copyright 1998-2020, Benjamin C. Pierce
+  \large Copyright 1998-2023, Benjamin C. Pierce
   \end{center}%
 \fi%
 %
@@ -305,8 +305,7 @@ built.  You can force the text interface even if graphical is the default by
 adding {\tt -ui text}.
 The other command-line arguments to both versions are identical.
 
-The graphical version can also be run directly by clicking on its
-icon, but this may require a little set-up.
+The graphical version can also be run directly by clicking on its icon.
 For this tutorial, we assume that you're starting it from the command
 line.
 
@@ -325,10 +324,7 @@ two directories on a single machine.
 
 Follow the instructions in \sectionref{install}{Installation} to either
 download or build an executable version of Unison, and install it
-somewhere on your search path.  (If you just want to use the textual user
-interface, download the appropriate textui binary.  If you just want to
-the graphical interface---or if you will use both interfaces [the gtkui
-binary actually has both compiled in]---then download the gtkui binary.)
+somewhere on your search path.
 
 Create a small test directory {\tt a.tmp} containing a couple of files
 and/or subdirectories, e.g.,
@@ -357,11 +353,11 @@ You should see a message notifying you that all the files are actually
 equal and then get returned to the command line.
 \end{textui}
 
-\begin{tkui}
+\begin{gui}
 You should get a big empty window with a message at the bottom
 notifying you that all files are identical.  Choose the Exit item from
 the File menu to get back to the command line.
-\end{tkui}
+\end{gui}
 
 Next, make some changes in a.tmp and/or b.tmp.  For example:
 \begin{verbatim}
@@ -425,7 +421,7 @@ When Unison stops to wait for input from the user, pressing ``\verb|?|''
 will always give a list of possible responses and their meanings.
 \end{textui}
 
-\begin{tkui}
+\begin{gui}
 The main window shows all the files that have been modified in either
 {\tt a.tmp} or {\tt b.tmp}.  To override a default action (or to select
 an action in the case when there is no default), first select the file, either
@@ -442,7 +438,7 @@ When you are satisfied with the directions for the propagation of changes
 as shown in the main window, click the ``Go'' button to set them in
 motion.  A check sign will be displayed next to each filename
 when the file has been dealt with.
-\end{tkui}
+\end{gui}
 
 
 \SUBSECTION{Remote Usage}{remote}
@@ -461,7 +457,9 @@ Follow the instructions in the Installation section to download or
 build an executable version of Unison on the server machine, and
 install it somewhere on your search path.  (It doesn't matter whether
 you install the textual or graphical version, since the copy of Unison on
-the server doesn't need to display any user interface at all.)
+the server doesn't need to display any user interface at all.  The major
+benefit of installing the textual version is that it doesn't have any external
+dependencies required by the GUI executable.)
 
 It is important that the version of Unison installed on the server
 machine is the same as the version of Unison on the client machine.
@@ -1810,7 +1808,7 @@ terminal alone and process input a line at a time.
 It is possible to interrupt an ongoing synchronization process before it
 completes. Different user interfaces offer different ways of doing it.
 
-\begin{tkui}
+\begin{gui}
 In the graphical user interface the synchronization process can be interrupted
 before it is finished by pressing the ``Stop'' button or by closing the window.
 The ``Stop'' button causes the onging propagation to be stopped as quickly as
@@ -1819,7 +1817,7 @@ rescan can be performed or a different profile selected. Closing the window in
 the middle of update propagation process will exit the application immediately
 without doing proper cleanup; it is therefore not recommended unless the
 ``Stop'' button does not react quickly enough.
-\end{tkui}
+\end{gui}
 
 \begin{textui}
 When not synchronizing continuously, the text interface terminates when
