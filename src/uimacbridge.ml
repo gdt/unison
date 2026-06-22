@@ -682,6 +682,9 @@ let unisonSynchronize () =
 ;;
 Callback.register "unisonSynchronize" unisonSynchronize;;
 
+let unisonAbortAll () = Abort.all ();;
+Callback.register "abortAll" unisonAbortAll;;
+
 let unisonIgnorePath pathString =
   Uicommon.addIgnorePattern (Uicommon.ignorePath (Path.fromString pathString));;
 let unisonIgnoreExt pathString =
